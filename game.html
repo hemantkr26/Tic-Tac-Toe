@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe Game</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        button {
+            padding: 10px 20px;
+            background-color: #ece8e5;
+            color: rgb(7, 7, 7);
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            z-index: 1;
+        }
+
+        button:hover {
+            background-color: #676767;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1;
+        }
+
+        /* Style for the video container */
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            /* Ensure the video is behind other content */
+        }
+
+        /* Style for the video element */
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            /* Ensure the video is behind other content */
+        }
+    </style>
+</head>
+
+<body class="fade-in">
+    <!-- Video background -->
+    <div class="video-container">
+        <video autoplay muted loop id="video-background">
+            <source src="back-video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    
+    <div class="msg-container hide">
+        <p id="msg">Winner</p>
+        <button id="new-btn">New Game</button>
+    </div>
+    <main>
+        <h1>Tic Tac Toe</h1>
+        <div class="container">
+            <div class="game">
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+            </div>
+        </div>
+        <button id="reset-btn">Reset Game</button>
+    </main>
+    <button class="back-button" onclick="goToHomePage()">Back</button>
+    <script src="game.js"></script>
+</body>
+
+</html>
